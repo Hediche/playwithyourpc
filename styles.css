@@ -1,0 +1,74 @@
+body{
+    text-align: center;
+    background-color: aquamarine;
+    margin: 0;
+    padding:0;
+    justify-content: center;
+}
+
+.title{
+    font-size: 3rem;
+    font-family: cursive;
+    color: tomato;
+    margin-top: 100px;
+}
+.newtitle{
+    font-size: 7rem;
+    font-family: fantasy;
+    color: rgb(187, 255, 0);
+}
+h1 {
+    color: rgb(171, 173, 21);
+} 
+h2{
+    color: rgb(5, 5, 4);
+}
+.game {
+    display: flex;
+    flex-direction:column ;
+    margin:0 200px;
+   
+    
+}
+#player{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top:50px;
+    justify-content: space-evenly;
+}
+#computer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom:100px;
+}
+.gameimg{
+    width: 300px;
+    height: auto;
+    border-radius: 150px;
+    margin:50px 0;
+}
+
+.select{
+    border-width: 0.7;
+    border-style: double;
+    border-radius: 80px;
+    background-color: rgb(243, 222, 214);
+    justify-content:space-evenly;
+    width: 230px;
+    height: 100px;
+    cursor:pointer;
+    
+}
+.selected{
+    background-color: yellow;
+}
+.goutcome{
+    font-size: 4rem;
+    font-family: cursive;
+    color: rgb(240, 16, 35);
+   
+}
+
+
