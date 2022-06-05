@@ -53,7 +53,7 @@ h2{
 .select{
     border-width: 0.7;
     border-style: double;
-    border-radius: 80px;
+    border-radius: 150px;
     background-color: rgb(243, 222, 214);
     justify-content:space-evenly;
     width: 230px;
