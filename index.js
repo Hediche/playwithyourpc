@@ -2,7 +2,7 @@
 $(".title").on("mouseover",function gametext(){
     $(".title").text("Have fun with your computer!");
     $(".title").css("color","green");
-    $(".title").css("font-size","7rem")
+    $(".title").css("font-size","3rem")
     setInterval.gametext()
 })
 // create an event listener:
