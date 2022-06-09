@@ -9,35 +9,41 @@
 </head>
 <body>
   <h1 class="title">Let's play "Paper Rock Scissors" ! </h1>
-  <img class="gameimg" src="OIP.jpg" alt="">
-    <div class="game">
-     
+  <img src="OIP.jpg" class="gameimg" alt="">
+
+    <div class="game">   
       <div><h1> Player selection </h1></div>
       <div id="player">
          <div class="Rock select">
-           <h2>Rock</h2>
+           
+           <img class="playimg" src="rock.png" alt="">
           </div>
          <div class = "Paper select">
-          <h2>Paper</h2>
+          
+          <img class="playimg" src="paper.png" alt="">
         </div>
          <div class="Scissors select">
-           <h2>Scissors</h2>
+           <img class="playimg" src="scissors.png" alt="">
         </div>
       </div>
 
       <div class = "resultgame" id="gameoutcome">
-        <h3 class="gameResult goutcome">See your Result Here</h3>
+        <div id="rulesimg"></div>
+        <h3 class="gameResult goutcome"></h3>
       </div>
       <div><h1 class="computerselected">Computer Selection</h1></div>
       
       <div id="computer">
-        
         <div class = "computerselect select" > 
           <h2 class="computerh2">Computer Select</h2>
+          <div id="imageDiv"></div>
         </div>
+        
       </div>
     </div>
-  
+  <footer>
+    @Have Fun With Your Computer!
+  </footer>
      
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
