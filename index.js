@@ -39,7 +39,7 @@ $(".title").on("mouseover",function gametext(){
             winner(playerSelection,computerSelection);
 
             if(moves==5){
-                gameOver();
+                gameOver(playerSelection,movesleft);
             }
         
         })
