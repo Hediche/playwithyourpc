@@ -28,7 +28,7 @@ $(".title").on("mouseover",function gametext(){
        playerOptions.forEach(select => {
         select.on("click", function(){
             moves++;
-           const movesleft = $(".movesleft").innerText;
+            const movesleft = $(".movesleft").innerText;
             $(".movesleft").textContent = 'Your moves left: + ${5- moves}';
             playerSelection = this.innerText.trim();
             const compRandom = Math.floor(Math.random()*3);
@@ -154,6 +154,11 @@ $(".title").on("mouseover",function gametext(){
   }
 
   const gameOver = function(playerSelection,movesleft){
+
+	playerOptions.forEach(select => {
+        select.style.display = 'none';
+    })
+
     if(yourScore > computerScore){
         $(".gameResult").innerText = "You won!";
         $(".gameResult").css("color","green");
