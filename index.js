@@ -28,7 +28,7 @@ $(".title").on("mouseover",function gametext(){
        playerOptions.forEach(select => {
         select.on("click", function(){
             moves++;
-            const movesleft = $(".movesleft").textContent;
+            const movesleft = document.querySelector(".movesleft").innerHTML;
             alert(movesleft);
             $(".movesleft").innerText= 'Your moves left: + ${5- moves}';
 
