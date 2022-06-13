@@ -29,7 +29,7 @@ $(".title").on("mouseover",function gametext(){
         select.on("click", function(){
             moves++;
             const movesleft = $(".movesleft").innerText;
-            $(".movesleft").textContent = 'Your moves left: + ${5- moves}';
+            movesleft.innerText = 'Your moves left: + ${5- moves}';
             playerSelection = this.innerText.trim();
             const compRandom = Math.floor(Math.random()*3);
             const computerSelection = gamer[compRandom];
@@ -38,7 +38,7 @@ $(".title").on("mouseover",function gametext(){
           
             winner(playerSelection,computerSelection);
 
-            if(movesleft ==5){
+            if(moves == 5){
                 gameOver();
             }
         
