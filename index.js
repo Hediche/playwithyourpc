@@ -155,8 +155,8 @@ $(".title").on("mouseover",function gametext(){
 
   const gameOver = function(playerSelection,movesleft){
 
-	playerOptions.forEach(option => {
-        option.style.display = 'none';
+	playerOptions.forEach(select => {
+        select.style.display = 'none';
     })
 
     if(yourScore > computerScore){
