@@ -23,9 +23,9 @@ $(".title").on("mouseover",function gametext(){
        const paperBtn = $(".paper");
        const scissorsBtn = $(".scissors");
        const rockBtn = $(".rock");
-       const playerSelection = [paperBtn,scissorsBtn,rockBtn];
+       const playerOptions = [paperBtn,scissorsBtn,rockBtn];
 
-       playerSelection.forEach(select => {
+       playerOptions.forEach(select => {
         select.on("click", function(){
             moves++;
             let movesleft = moves++ ;
@@ -34,7 +34,10 @@ $(".title").on("mouseover",function gametext(){
             const compRandom = Math.floor(Math.random()*3);
             const computerSelection = gamer[compRandom];
             $('.imageDiv').innerHTML = '<img width="80px" height="auto" src="${computerSelection} + .png">';
-             winner(playerSelection,computerSelection);
+            function winner(){
+                alert(playerSelection,computerSelection);
+            };
+            winner();
 
             if(movesleft ==5){
                 gameOver();
