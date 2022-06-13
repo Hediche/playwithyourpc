@@ -28,7 +28,7 @@ $(".title").on("mouseover",function gametext(){
        playerOptions.forEach(select => {
         select.on("click", function(){
             moves++;
-            const movesleft = $(".movesleft").innerText;
+            const movesleft = $(".movesleft").textContent;
             alert(movesleft);
             $(".movesleft").innerText= 'Your moves left: + ${5- moves}';
 
@@ -52,7 +52,7 @@ $(".title").on("mouseover",function gametext(){
     const winner = function(playerSelection,computerSelection){ 
         if( playerSelection === "paper"){
           if(computerSelection === "scissors"){
-              var outcome = "Computer wins, Scissors beat Paper!";
+              var outcome = "Scissors beat Paper!";
               var computerScore = computerScore +1;
               $(".computerselect").css("background-color","green");
               $(".paper").css("background-color","blue");
@@ -60,7 +60,7 @@ $(".title").on("mouseover",function gametext(){
              
             
           } else if(computerSelection === "Rock"){
-            var outcome = "You win! Paper beats Rock!";
+            var outcome = "Paper beats Rock!";
             var yourScore = yourScore + 1;
             $(".paper").css("background-color","green");
             $(".computerselect").css("background-color","red");
@@ -86,7 +86,7 @@ $(".title").on("mouseover",function gametext(){
       //     playerSelection = gamer[1];
           if (playerSelection === "scissors"){
               if(computerSelection === "rock"){
-                  var outcome = "Computer Wins ! Rock beats Scissors" ;
+                  var outcome = "Rock beats Scissors" ;
                   var computerScore = computerScore + 1;
                   $(".computerselect").css("background-color","green");
                   $(".scissors").css("background-color","blue");
@@ -96,7 +96,7 @@ $(".title").on("mouseover",function gametext(){
                  
             
               }else if (computerSelection === "paper"){
-                  var outcome ="You Win ! Scissors beat Paper!";
+                  var outcome ="Scissors beat Paper!";
                   var yourScore = yourScore + 1;
                   $(".scissors").css("background-color","green");
                   $(".computerselect").css("background-color","red");
@@ -124,7 +124,7 @@ $(".title").on("mouseover",function gametext(){
       //     playerSelection = gamer[2];
           if (playerSelection==="rock"){
               if(computerSelection === "paper"){
-                  var outcome = "Computer Wins! Paper beats Rock!";
+                  var outcome = "Paper beats Rock!";
                   var computerScore = computerScore + 1;
                   $(".computerselect").css("background-color","green");
                   $(".rock").css("background-color","blue");
@@ -133,7 +133,7 @@ $(".title").on("mouseover",function gametext(){
                  
                   
               } else if (computerSelection === "scissors"){
-                  var outcome = "You win ! Rock beats Scissors!";
+                  var outcome = "Rock beats Scissors!";
                   var yourScore = yourScore + 1;
                   $(".rock").css("background-color","green");
                   $(".computerselect").css("background-color","red");
