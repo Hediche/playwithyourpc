@@ -29,7 +29,7 @@ $(".title").on("mouseover",function gametext(){
         select.on("click", function(){
             moves++;
             const movesleft = document.querySelector('.movesleft').innerHTML;
-            alert(movesleft);
+        
             document.querySelector('.movesleft').innerHTML = `Moves Left: ${5-moves}`;
 
             playerSelection = this.innerText.trim();
@@ -155,6 +155,9 @@ $(".title").on("mouseover",function gametext(){
   }
 
   const gameOver = function(playerSelection,movesleft){
+
+    $(".movesleft").innerHTML = "Game Over!";
+    $(".none").innerHTML = "no moves left"
 
 	playerOptions.forEach(select => {
         select.style.display = 'none';
