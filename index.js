@@ -29,10 +29,11 @@ $(".title").on("mouseover",function gametext(){
         select.on("click", function(){
             moves++;
            const movesleft = $(".movesleft").innerText;
-            $(".movesleft").textContent = 'Your moves left: + ${5- movesleft}';
+            $(".movesleft").textContent = 'Your moves left: + ${5- moves}';
             playerSelection = this.innerText.trim();
             const compRandom = Math.floor(Math.random()*3);
             const computerSelection = gamer[compRandom];
+            alert(moves);
             $('.imageDiv').innerHTML = '<img width="80px" height="auto" src="${computerSelection} + .png">';
           
             winner(playerSelection,computerSelection);
