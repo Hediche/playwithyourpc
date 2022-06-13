@@ -33,7 +33,6 @@ $(".title").on("mouseover",function gametext(){
             playerSelection = this.innerText.trim();
             const compRandom = Math.floor(Math.random()*3);
             const computerSelection = gamer[compRandom];
-            alert(moves);
             $('.imageDiv').innerHTML = '<img width="80px" height="auto" src="${computerSelection} + .png">';
           
             winner(playerSelection,computerSelection);
@@ -54,14 +53,14 @@ $(".title").on("mouseover",function gametext(){
               var outcome = "Computer wins, Scissors beat Paper!";
               var computerScore = computerScore +1;
               $(".computerselect").css("background-color","green");
-              $(".Paper").css("background-color","blue");
+              $(".paper").css("background-color","blue");
                $(".goutcome").text(outcome);
              
             
           } else if(computerSelection === "Rock"){
             var outcome = "You win! Paper beats Rock!";
             var yourScore = yourScore + 1;
-            $(".Paper").css("background-color","green");
+            $(".paper").css("background-color","green");
             $(".computerselect").css("background-color","red");
              $(".goutcome").text(outcome).fadeIn();
             document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="rock.png">';
@@ -70,7 +69,7 @@ $(".title").on("mouseover",function gametext(){
           } else if (computerSelection === "paper"){
             var outcome = "Come again!";
             $(".computerselect").css("background-color","yellow");
-            $(".Paper").css("background-color","yellow");
+            $(".paper").css("background-color","yellow");
             $(".goutcome").text(outcome).fadeIn();
             document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="paper.png">';
            } 
@@ -88,7 +87,7 @@ $(".title").on("mouseover",function gametext(){
                   var outcome = "Computer Wins ! Rock beats Scissors" ;
                   var computerScore = computerScore + 1;
                   $(".computerselect").css("background-color","green");
-                  $(".Scissors").css("background-color","blue");
+                  $(".scissors").css("background-color","blue");
                   $(".goutcome").text(outcome).fadeIn();
   
                   document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="rock.png">';
@@ -97,7 +96,7 @@ $(".title").on("mouseover",function gametext(){
               }else if (computerSelection === "paper"){
                   var outcome ="You Win ! Scissors beat Paper!";
                   var yourScore = yourScore + 1;
-                  $(".Scissors").css("background-color","green");
+                  $(".scissors").css("background-color","green");
                   $(".computerselect").css("background-color","red");
                   $(".goutcome").text(outcome).fadeIn();
                   document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="paper.png">';
@@ -106,7 +105,7 @@ $(".title").on("mouseover",function gametext(){
               }else if (computerSelection === "scissors"){
                   var outcome = "Come again!"
                   $(".computerselect").css("background-color","yellow");
-                  $(".Scissors").css("background-color","yellow");
+                  $(".scissors").css("background-color","yellow");
                   $(".goutcome").text(outcome).fadeIn();
                   document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="scissors.png">';
                  
@@ -126,7 +125,7 @@ $(".title").on("mouseover",function gametext(){
                   var outcome = "Computer Wins! Paper beats Rock!";
                   var computerScore = computerScore + 1;
                   $(".computerselect").css("background-color","green");
-                  $(".Rock").css("background-color","blue");
+                  $(".rock").css("background-color","blue");
                    $(".goutcome").text(outcome);
                   document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="paper.png">';
                  
@@ -134,7 +133,7 @@ $(".title").on("mouseover",function gametext(){
               } else if (computerSelection === "scissors"){
                   var outcome = "You win ! Rock beats Scissors!";
                   var yourScore = yourScore + 1;
-                  $(".Rock").css("background-color","green");
+                  $(".rock").css("background-color","green");
                   $(".computerselect").css("background-color","red");
                    $(".goutcome").text(outcome);
                   document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="scissors.png">';
@@ -143,7 +142,7 @@ $(".title").on("mouseover",function gametext(){
               } else if (computerSelection === "rock"){
                   var outcome = "Come again!";
                   $(".computerselect").css("background-color","yellow");
-                  $(".Rock").css("background-color","yellow");
+                  $(".rock").css("background-color","yellow");
                   $(".goutcome").text(outcome);
                   document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="rock.png">';
   
