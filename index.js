@@ -28,9 +28,9 @@ $(".title").on("mouseover",function gametext(){
        playerOptions.forEach(select => {
         select.on("click", function(){
             moves++;
-            const movesleft = $('.movesleft').innerHTML;
+            const movesleft = document.querySelector('.movesleft').innerHTML;
             alert(movesleft);
-            $(".movesleft").innerText= 'Your moves left: + ${5- moves}';
+            document.querySelector('.movesleft').innerHTML = `Moves Left: ${5-moves}`;
 
             playerSelection = this.innerText.trim();
             const compRandom = Math.floor(Math.random()*3);
@@ -45,7 +45,7 @@ $(".title").on("mouseover",function gametext(){
         
         })
        
-       });
+       })
       
         
     }
