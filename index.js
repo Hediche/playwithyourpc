@@ -30,7 +30,7 @@ $(".title").on("mouseover",function gametext(){
             moves++;
             let movesleft = moves++ ;
             $(".movesleft").textContent = 'Your moves left: + ${5- movesleft}';
-            playerSelection = this.innerHTML.trim();
+            playerSelection = this.innerText.trim();
             let compRandom = Math.floor(Math.random()*3);
             let computerSelection = gamer[compRandom];
 
