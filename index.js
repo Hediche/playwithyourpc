@@ -31,9 +31,9 @@ $(".title").on("mouseover",function gametext(){
             let movesleft = moves++ ;
             $(".movesleft").textContent = 'Your moves left: + ${5- movesleft}';
             playerSelection = this.innerText.trim();
-            let compRandom = Math.floor(Math.random()*3);
-            let computerSelection = gamer[compRandom];
-
+            const compRandom = Math.floor(Math.random()*3);
+            const computerSelection = gamer[compRandom];
+            $('.imageDiv').innerHTML = '<img width="80px" height="auto" src="${computerSelection} + .png">';
              winner(playerSelection,computerSelection);
 
             if(movesleft ==5){
@@ -54,7 +54,7 @@ $(".title").on("mouseover",function gametext(){
               $(".computerselect").css("background-color","green");
               $(".Paper").css("background-color","blue");
                $(".goutcome").text(outcome);
-              document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="scissors.png">';
+             
               document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="loss.jpg">';
           } else if(computerSelection === "Rock"){
             var outcome = "You win! Paper beats Rock!";
