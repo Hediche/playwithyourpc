@@ -35,7 +35,7 @@ $(".title").on("mouseover",function gametext(){
             const computerSelection = gamer[compRandom];
             $('.imageDiv').innerHTML = '<img width="80px" height="auto" src="${computerSelection} + .png">';
             function winner(){
-                alert(playerSelection,computerSelection);
+                alert(playerSelection + computerSelection);
             };
             winner();
 
