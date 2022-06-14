@@ -25,12 +25,12 @@ $(".title").on("mouseover",function gametext(){
        const rockBtn = $(".rock");
        const playerOptions = [paperBtn,scissorsBtn,rockBtn];
 
-       playerOptions.forEach(select => {
-        select.on("click", function(){
+       playerOptions.forEach(option => {
+        option.on("click", function(){
             moves++;
-            const movesleft = document.querySelector('.movesleft').innerHTML;
+            // const movesLeft = document.querySelector('.movesleft').innerHTML;
         
-            document.querySelector('.movesleft').innerHTML = `Moves Left: ${5-moves}`;
+            document.querySelector('.movesleft').innerHTML = `Moves Left: ${10-moves}`;
 
             playerSelection = this.innerText.trim();
             const compRandom = Math.floor(Math.random()*3);
@@ -38,8 +38,8 @@ $(".title").on("mouseover",function gametext(){
             $('.imageDiv').innerHTML = '<img width="80px" height="auto" src="${computerSelection} + .png">';
           
             winner(playerSelection,computerSelection);
-
-            if(moves==5){
+            
+            if(moves == 10){
                 gameOver(playerSelection,movesleft);
             }
         
@@ -156,11 +156,11 @@ $(".title").on("mouseover",function gametext(){
 
   const gameOver = function(playerSelection,movesleft){
 
-    $(".movesleft").innerHTML = "Game Over!";
-    $(".none").innerHTML = "no moves left"
+    document.querySelector(".movesleft").innerHTML = "Game Over!";
+    document.querySelector(".none").innerHTML = "no moves left";
 
-	playerOptions.forEach(select => {
-        select.style.display = 'none';
+	playerOptions.forEach(option => {
+        option.style.display = 'none';
     })
 
     if(yourScore > computerScore){
@@ -180,6 +180,8 @@ $(".title").on("mouseover",function gametext(){
         $(".gameResult").css("fontSize","3rem");
     }
 }
+
 playGame();
+
 }
 game();
