@@ -138,9 +138,27 @@ const resultMy = document.querySelector(".goutcome");
 const movesLeft = document.querySelector(".movesleft");  
 const lastmove = document.querySelector('.none');
 
-playerOptions.foreach(option => {
-    option.style.display = 'none';
-})
+    playerOptions.forEach(option => {
+        option.style.display = 'none';
+    })
+
+    if(yourScore > computerScore){
+      resultMy.innerHTML = `You Won! your score is ${yourScore} out of 5`;
+      resultMy.css.color ='red';
+      resultMy.css.fontSize = '3rem';
+    //   document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="win.jpg">';
+    }else if(computerScore >  yourScore){
+      resultMy.innerHTML = `You Lost! your score is ${yourScore} out of 5`;
+      resultMy.css.color ='red';
+      resultMy.css.fontSize = '3rem';
+
+    //   document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="loss.jpg">';
+} else {
+    resultMy.innerHTML = "It is a Tie!";
+    resultMy.css.color ='red';
+    resultMy.css = '3rem';
+  }
+
     movesLeft.innerHTML = "Game Over!";
     movesLeft.style.color = "red";
     movesLeft.style.fontSize = "5rem";
@@ -148,30 +166,15 @@ playerOptions.foreach(option => {
     lastmove.innerText = `Your score is: ${yourScore} Computer score is: ${computerScore} ` ;
     lastmove.style.color ="purple";
     lastmove.style.fontSize="4rem";
-   
-   
 
-    if(yourScore > computerScore){
-        resultMy.innerHTML = "You Won!";
-        resultMy.css.color ='red';
-        resultMy.css.fontSize = '3rem';
-        document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="win.jpg">';
-    }else if(computerScore >  yourScore){
-        resultMy.innerHTML = "You Lost!";
-        resultMy.css.color ='red';
-        resultMy.css.fontSize = '3rem';
-    
-        document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="loss.jpg">';
-    } else {
-        resultMy.innerHTML = "It is a Tie!";
-        resultMy.css.color ='red';
-        resultMy.css = '3rem';
-      }
     reloadBtn.innerText = 'Restart';
     reloadBtn.style.display = 'flex'
     reloadBtn.addEventListener('click',() => {
       window.location.reload();
     })
+
+	
+   
 
 
 }
