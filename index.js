@@ -134,31 +134,38 @@ $(".title").on("mouseover",function gametext(){
 
 function gameOver(playerOptions,movesleft){
 const reloadBtn = document.querySelector('.reload');
-    
-    document.querySelector(".movesleft").innerHTML = "Game Over!";
-    document.querySelector(".movesleft").innerHTML.style.color = "red";
-    document.querySelector(".movesleft").innerHTML.style.fontSize = "3rem";
+const resultMy = document.querySelector(".goutcome");
+const movesLeft = document.querySelector(".movesleft");  
+const lastmove = document.querySelector('.none');
 
-	
-    playerOptions.forEach(option => {
-        option.style.display = 'none';
-    })
+playerOptions.foreach(option => {
+    option.style.display = 'none';
+})
+    movesLeft.innerHTML = "Game Over!";
+    movesLeft.style.color = "red";
+    movesLeft.style.fontSize = "5rem";
+
+    lastmove.innerText = `Your score is: ${yourScore} Computer score is: ${computerScore} ` ;
+    lastmove.style.color ="purple";
+    lastmove.style.fontSize="4rem";
+   
+   
 
     if(yourScore > computerScore){
-        document.querySelector(".goutcome").innerHTML("you won!");
-        document.querySelector(".goutcome").innerHTML.css("color","red");
-        document.querySelector(".goutcome").innerHTML.css("font-size","3rem");
+        resultMy.innerHTML = "You Won!";
+        resultMy.css.color ='red';
+        resultMy.css.fontSize = '3rem';
         document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="win.jpg">';
     }else if(computerScore >  yourScore){
-        document.querySelector(".goutcome").innerHTML("You Lost!");
-        document.querySelector(".goutcome").innerHTML.css("color","red");
-        document.querySelector(".goutcome").innerHTML.css("font-size","3rem");
+        resultMy.innerHTML = "You Lost!";
+        resultMy.css.color ='red';
+        resultMy.css.fontSize = '3rem';
     
         document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="loss.jpg">';
     } else {
-        document.querySelector(".goutcome").innerHTML("It is a Tie!");
-        document.querySelector(".goutcome").innerHTML.css("color","red");
-        document.querySelector(".goutcome").innerHTML.css("font-size","3rem");
+        resultMy.innerHTML = "It is a Tie!";
+        resultMy.css.color ='red';
+        resultMy.css = '3rem';
       }
     reloadBtn.innerText = 'Restart';
     reloadBtn.style.display = 'flex'
