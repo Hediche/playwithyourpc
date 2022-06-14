@@ -132,7 +132,7 @@ $(".title").on("mouseover",function gametext(){
   
   }
 
-  const gameOver = (playerOptions,movesleft) => {
+function gameOver(playerOptions,movesleft){
 
     
     document.querySelector(".movesleft").innerHTML = "Game Over!";
@@ -146,22 +146,28 @@ $(".title").on("mouseover",function gametext(){
     });
 
     if(yourScore > computerScore){
-        document.querySelector(".gameResult").text = "You won!";
-        document.querySelector(".gameResult").css("color","green");
-        document.querySelector(".gameResult").css("fontSize","3rem");
+        $(".goutcome").text = "You Won!";
+        $(".goutcome").css.color ='red';
+        $(".goutcome").text.css.fontSize = '3rem';
         document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="win.jpg">';
-    }
-    else if(computerScore >  yourScore){
-        document.querySelector(".gameResult").text = "You lost!"
-        document.querySelector(".gameResult").css("color","red");
-        document.querySelector(".gameResult").css("fontSize","3rem");
+    }else if(computerScore >  yourScore){
+        $(".goutcome").text = "You Lost!";
+        $(".goutcome").css.color ='red';
+        $(".goutcome").text.css.fontSize = '3rem';
+    
         document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="loss.jpg">';
-    } 
-    else{
-        document.querySelector(".gameResult").text = "It is a Tie!";
-        document.querySelector(".gameResult").css("color","red");
-        document.querySelector(".gameResult").css("fontSize","3rem");
-    }
+    } else {
+        $(".goutcome").text = "It is a Tie!";
+        $(".goutcome").css.color ='red';
+        $(".goutcome").text.css.fontSize = '3rem';
+      }
+    reloadBtn.innerText = 'Restart';
+    reloadBtn.style.display = 'flex'
+    reloadBtn.addEventListener('click',() => {
+      window.location.reload();
+    })
+
+
 }
 
 playGame();
