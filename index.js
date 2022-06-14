@@ -6,12 +6,6 @@ $(".title").on("mouseover",function gametext(){
     setInterval.gametext()
 })
 
-
-    // $(".Paper").on("click",function computerPlay(playerSelection,computerSelection){
-    // var comRandom = Math.floor(Math.random() * 3);
-    // var computerSelection = gamer[comRandom]; 
-    // $(".computerh2").text(computerSelection);   
-    //   playerSelection = gamer[0];
   const game = function(){
     let yourScore = 0;
     let computerScore = 0;
@@ -53,7 +47,7 @@ $(".title").on("mouseover",function gametext(){
         if( playerSelection === "paper"){
           if(computerSelection === "scissors"){
               var outcome = "Scissors beat Paper!";
-              var computerScore = computerScore +1;
+              computerScore++;
               $(".computerselect").css("background-color","green");
               $(".paper").css("background-color","blue");
                $(".goutcome").text(outcome);
@@ -61,7 +55,7 @@ $(".title").on("mouseover",function gametext(){
             
           } else if(computerSelection === "rock"){
             var outcome = "Paper beats Rock!";
-            var yourScore = yourScore + 1;
+            yourScore++;;
             $(".paper").css("background-color","green");
             $(".computerselect").css("background-color","red");
              $(".goutcome").text(outcome).fadeIn();
@@ -76,18 +70,11 @@ $(".title").on("mouseover",function gametext(){
             document.getElementById('imageDiv').innerHTML = '<img width="80px" height="auto" src="paper.png">';
            } 
         }
-      // });
-  
-      // $(".Scissors").on("click", function computerPlay(playerSelection,computerSelection){
-      //     var comRandom = Math.floor(Math.random() * 3);
-      //     var computerSelection = gamer[comRandom]; 
-      //     $(".computerh2").text(computerSelection);
-      //     // $(".Scissors").css("background-color","red");
-      //     playerSelection = gamer[1];
+
           if (playerSelection === "scissors"){
               if(computerSelection === "rock"){
                   var outcome = "Rock beats Scissors" ;
-                  var computerScore = computerScore + 1;
+                  computerScore++;
                   $(".computerselect").css("background-color","green");
                   $(".scissors").css("background-color","blue");
                   $(".goutcome").text(outcome).fadeIn();
@@ -97,7 +84,7 @@ $(".title").on("mouseover",function gametext(){
             
               }else if (computerSelection === "paper"){
                   var outcome ="Scissors beat Paper!";
-                  var yourScore = yourScore + 1;
+                  yourScore++;;
                   $(".scissors").css("background-color","green");
                   $(".computerselect").css("background-color","red");
                   $(".goutcome").text(outcome).fadeIn();
@@ -114,18 +101,10 @@ $(".title").on("mouseover",function gametext(){
               } 
           } 
       
-      // });
-  
-      // $(".Rock").on("click",function computerPlay(playerSelection,computerSelection){
-      //     var comRandom = Math.floor(Math.random() * 3);
-      //     var computerSelection = gamer[comRandom]; 
-      //     $(".computerh2").text(computerSelection);
-      //     // $(".Rock").css("background-color","red");
-      //     playerSelection = gamer[2];
           if (playerSelection==="rock"){
               if(computerSelection === "paper"){
                   var outcome = "Paper beats Rock!";
-                  var computerScore = computerScore + 1;
+                  computerScore++;
                   $(".computerselect").css("background-color","green");
                   $(".rock").css("background-color","blue");
                    $(".goutcome").text(outcome);
@@ -134,7 +113,7 @@ $(".title").on("mouseover",function gametext(){
                   
               } else if (computerSelection === "scissors"){
                   var outcome = "Rock beats Scissors!";
-                  var yourScore = yourScore + 1;
+                 yourScore++;
                   $(".rock").css("background-color","green");
                   $(".computerselect").css("background-color","red");
                    $(".goutcome").text(outcome);
@@ -150,7 +129,6 @@ $(".title").on("mouseover",function gametext(){
   
                 } 
           }
-      // })
   
   }
 
@@ -161,7 +139,7 @@ $(".title").on("mouseover",function gametext(){
     document.querySelector(".movesleft").innerHTML.style.color = "red";
     document.querySelector(".movesleft").innerHTML.style.fontSize = "3rem";
     document.querySelector(".none").innerHTML = "no moves left";
-    // document.querySelector('.goutcome').text.style.display ='none';
+   
 	
     playerOptions.forEach(option => {
         option.style.display = 'none';
@@ -178,7 +156,8 @@ $(".title").on("mouseover",function gametext(){
         document.querySelector(".gameResult").css("color","red");
         document.querySelector(".gameResult").css("fontSize","3rem");
         document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="loss.jpg">';
-    } else{
+    } 
+    else{
         document.querySelector(".gameResult").text = "It is a Tie!";
         document.querySelector(".gameResult").css("color","red");
         document.querySelector(".gameResult").css("fontSize","3rem");
@@ -188,4 +167,5 @@ $(".title").on("mouseover",function gametext(){
 playGame();
 
 }
+
 game();
