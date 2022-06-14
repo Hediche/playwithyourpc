@@ -134,12 +134,25 @@ $(".title").on("mouseover",function gametext(){
 
 function gameOver(playerOptions,movesleft){
 const reloadBtn = document.querySelector('.reload');
-const resultMy = document.querySelector(".goutcome");
+const resultMy = document.querySelector(".relesimg");
 const movesLeft = document.querySelector(".movesleft");  
 const lastmove = document.querySelector('.none');
 
     playerOptions.forEach(option => {
         option.style.display = 'none';
+    })
+    movesLeft.innerText = "Game Over!";
+    movesLeft.style.color = "red";
+    movesLeft.style.fontSize = "5rem";
+
+    lastmove.innerText = `Your score is: ${yourScore} Computer score is: ${computerScore} ` ;
+    lastmove.style.color ="purple";
+    lastmove.style.fontSize="4rem";
+
+    reloadBtn.innerText = 'Restart';
+    reloadBtn.style.display = 'flex'
+    reloadBtn.addEventListener('click',() => {
+      window.location.reload();
     })
 
     if(yourScore > computerScore){
@@ -159,19 +172,7 @@ const lastmove = document.querySelector('.none');
     resultMy.css = '3rem';
   }
 
-    movesLeft.innerHTML = "Game Over!";
-    movesLeft.style.color = "red";
-    movesLeft.style.fontSize = "5rem";
-
-    lastmove.innerText = `Your score is: ${yourScore} Computer score is: ${computerScore} ` ;
-    lastmove.style.color ="purple";
-    lastmove.style.fontSize="4rem";
-
-    reloadBtn.innerText = 'Restart';
-    reloadBtn.style.display = 'flex'
-    reloadBtn.addEventListener('click',() => {
-      window.location.reload();
-    })
+   
 
 	
    
