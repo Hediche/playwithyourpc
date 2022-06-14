@@ -28,9 +28,9 @@ $(".title").on("mouseover",function gametext(){
        playerOptions.forEach(option => {
         option.on("click", function(){
             moves++;
-            const movesLeft = document.querySelector('.movesleft').innerHTML;
-        
-            document.querySelector('.movesleft').innerHTML = `Moves Left: ${10-moves}`;
+    
+    
+            document.querySelector('.movesleft').innerHTML = `Moves Left: ${5-moves}`;
 
             playerSelection = this.innerText.trim();
             const compRandom = Math.floor(Math.random()*3);
@@ -39,8 +39,8 @@ $(".title").on("mouseover",function gametext(){
           
             winner(playerSelection,computerSelection);
             
-            if(movesLeft == 0){
-                gameOver(playerSelection,movesleft);           
+            if(moves == 5){
+                gameOver(playerOptions,movesleft);           
             }
         
         })
@@ -154,7 +154,7 @@ $(".title").on("mouseover",function gametext(){
   
   }
 
-  const gameOver = function(playerSelection,movesleft){
+  const gameOver = (playerOptions,movesleft) => {
 
     
     document.querySelector(".movesleft").innerHTML = "Game Over!";
@@ -163,23 +163,25 @@ $(".title").on("mouseover",function gametext(){
     document.querySelector(".none").innerHTML = "no moves left";
     // document.querySelector('.goutcome').text.style.display ='none';
 	
-      
+    playerOptions.forEach(option => {
+        option.style.display = 'none';
+    });
 
     if(yourScore > computerScore){
-        document.querySelector(".goutcome").innerText = "You won!";
-        document.querySelector(".goutcome").css("color","green");
-        document.querySelector(".goutcome").css("fontSize","3rem");
+        document.querySelector(".gameResult").text = "You won!";
+        document.querySelector(".gameResult").css("color","green");
+        document.querySelector(".gameResult").css("fontSize","3rem");
         document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="win.jpg">';
     }
     else if(computerScore >  yourScore){
-        document.querySelector(".goutcome").innerText = "You lost!"
-        document.querySelector(".goutcome").css("color","red");
-        document.querySelector(".goutcome").css("fontSize","3rem");
+        document.querySelector(".gameResult").text = "You lost!"
+        document.querySelector(".gameResult").css("color","red");
+        document.querySelector(".gameResult").css("fontSize","3rem");
         document.getElementById('rulesimg').innerHTML = '<img width="350px" height="auto" src="loss.jpg">';
     } else{
-        document.querySelector(".goutcome").innerText = "It is a Tie!";
-        document.querySelector(".goutcome").css("color","red");
-        document.querySelector(".goutcome").css("fontSize","3rem");
+        document.querySelector(".gameResult").text = "It is a Tie!";
+        document.querySelector(".gameResult").css("color","red");
+        document.querySelector(".gameResult").css("fontSize","3rem");
     }
 }
 
